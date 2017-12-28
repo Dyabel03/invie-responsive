@@ -1,0 +1,170 @@
+<!DOCTYPE htlm>
+<html>
+  <head>
+    <title>Invie - tus mejores guitarras!!</title>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet">
+    <link rel="stylesheet" href="css/invie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Media query de forma externa (llamando a un archivo)
+      <link rel="stylesheet" media="(max-width: 800px)" href="css/media-query.css">
+    -->
+  </head>
+  <body>
+    <section id="portada" class="portada background"><!-- Portada -->
+      <header id="header" class="header contenedor"><!-- Header -->
+        <figure class="logotipo"> <!-- Logotipo -->
+          <img src="images/invie.png" srcset="images/invie.png 1x, images/invie2x.png 2x" width="186" height="60" alt="Invie logotipo"/>
+        </figure>
+        <span class="burger-button icon-menu" id="burger-button"></span>
+        <nav class="menu" id="menu"><!-- Menu -->
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="index.html#guitarras">Guitarras</a>
+            </li>
+            <li>
+              <a href="precios.html">Precios</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="contenedor">
+        <h1 class="titulo">Guitarras <span>invie</span>sibles</h1><!-- titulo -->
+        <h3 class="title-a">Sé la estrella de rock que siempre quisiste ser</h3><!-- resumen -->
+        <a class="button" href="#guitarras">Conoce más</a><!-- boton -->
+      </div>
+    </section>
+    <section id="guitarras" class="guitarras contenedor"><!-- Guitarras -->
+      <h2>Nuestras guitarras</h2><!-- titulo -->
+      <div class="video-demo-contenedor">
+        <div class="video-demo">
+          <div class="video-responsive-contenedor">
+            <iframe class="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/xxcMOb7iAIY" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!-- <video style="margin-top: 10px;" src="video/video2.mp4"></video> -->
+      <article class="guitarra"><!-- guitarra 1 -->
+        <img class="derecha" data-src="images/invie-acustica.png|images/invie-acustica2x.png" width="350" alt="Guitarra Invie Acustica"/>
+        <div class="contenedor-guitarra-a">
+          <h3 class="title-b">Invi Acústica</h3>
+          <ol>
+            <li>Estilo vintage</li>
+            <li>Madera pura</li>
+            <li>Incluye estuche</li>
+          </ol>
+        </div>
+      </article>
+      <article class="guitarra b"><!-- guitarra 2 -->
+        <img class="izquierda" data-src="images/invie-classic.png|images/invie-classic2x.png" width="350" alt="Guitarra Invie Classic"/>
+        <div class="contenedor-guitarra-b">
+          <h3 class="title-b">Invi Classic</h3>
+          <ol>
+            <li>Estilo vintage</li>
+            <li>Liviana</li>
+            <li>Inicia tu camino</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+          <img data-src="images/invie-white.png|images/invie-white2x.png" alt="logotipo blanco"/>
+          <a href="tel:+57302123233434"><strong>Teléfono</strong><span>302123233434</span></a>
+          <a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span>
+          </div>
+          <form class="formulario" novalidate>
+            <div class="col1">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required/>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+              <div class="sexo">
+                <label for="mujer">
+                  <input type="radio" id="mujer" name="sexo" value="mujer" checked>mujer
+                </label>
+                <label for="hombre">
+                  <input type="radio" id="hombre" name="sexo" value="hombre">hombre
+                </label>
+              </div>
+              <div class="intereses">
+                <label for="cotizacion">
+                  <input type="checkbox" id="cotizacion" name="interses" value="cotizacion" checked>Cotización
+                </label>
+                <label for="reclamos">
+                  <input type="checkbox" id="reclamos" name="interses" value="reclamos">Reclamos
+                </label>
+                <label for="comentarios">
+                  <input type="checkbox" id="comentarios" name="interses" value="comentarios">Comentarios
+                </label>
+                <label for="otros">
+                  <input type="checkbox" id="otros" name="interses" value="otros">Otros
+                </label>
+              </div>
+            </div>
+            <div class="col2">
+              <label for="textAreacomentarios">Comentarios</label>
+              <textarea id="textAreacomentarios" name="textAreacomentarios" rows="7" cols="30"></textarea>
+              <input type="submit" class="button" name="enviar" value="Enviar"/>
+            </div>
+          </form>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script>
+      console.log("Pixel Ratio: ", window.devicePixelRatio);
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+      var $burgerButton =document.getElementById('burger-button');
+      var $menu = document.getElementById('menu');
+
+      function toogleMenu() {
+        $menu.classList.toggle('active');
+        document.body.classList.toggle('opened');
+        $burgerButton.classList.toggle('icon-close');
+      }
+
+      function showMenu() {
+        $menu.classList.add('active');
+        document.body.classList.add('opened');
+        $burgerButton.classList.add('icon-close');
+      }
+
+      function hideMenu() {
+        $menu.classList.remove('active');
+        document.body.classList.remove('opened');
+        $burgerButton.classList.remove('icon-close');
+      }
+
+      function mediaQuery() {
+        if(consulta.matches) {
+          console.log("SI se cumplio");
+          $burgerButton.style.display='inline-block';
+          $burgerButton.addEventListener('touchstart', toogleMenu);
+
+        } else {
+          $burgerButton.removeEventListener('touchstart', toogleMenu);
+          $burgerButton.style.display='none';
+          console.log("NO se cumplio");
+        }
+      }
+      mediaQuery();
+
+      var bLazy = new Blazy({
+        selector: 'img'
+      });
+
+      // Gestos
+      var $body = document.body;
+
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', hideMenu);
+      gestos.on('swiperight', showMenu);
+    </script>
+  </body>
+</html>

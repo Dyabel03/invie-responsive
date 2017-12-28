@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Precios de tus mejores guitarras</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet">
+    <link rel="stylesheet" href="css/invie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body class="precios">
+      <header id="header" class="header background"><!-- Header -->
+        <div class="contenedor">
+          <figure class="logotipo"> <!-- Logotipo -->
+            <img src="images/invie.png" width="186" height="60" alt="Invie logotipo"/>
+          </figure>
+          <span class="burger-button icon-menu" id="burger-button"></span>
+          <nav class="menu" id="menu"><!-- Menu -->
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="index.html#guitarras">Guitarras</a>
+              </li>
+              <li>
+                <a href="precios.html">Precios</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <section class="tabla">
+      <div class="contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Precio</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Invie Clasic</td>
+              <td>$100000</td>
+              <td>ssssssssssssssssssssssssssssssssssssssss</td>
+            </tr>
+            <tr>
+              <td>Invie Acustica</td>
+              <td>$300000</td>
+              <td>ssssssssssssasdasdasdasdssssssssssssssssssssssssssssss</td>
+            </tr>
+            <tr>
+              <td>Invie Custom</td>
+              <td>$700000</td>
+              <td>ssssssssssssasdasdasdasdssssssssssssssssssssssssssssss</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="contenedor"> INFO: Trabajando con animaciones avanzadas con Hover
+        <h2 style="text-align:center;">Trabajando con animaciones avanzadas con Hover</h2>
+        <div class="post">
+          <img src="http://vignette3.wikia.nocookie.net/clubpenguin/images/3/31/Bal%C3%B3n_de_Oro_icono.png/revision/latest?cb=20140621004419&path-prefix=es"  width="150" height="150" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e</p>
+        </div>
+      </div> -->
+    </section>
+
+
+
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+          <img src="images/invie-white.png" alt="logotipo blanco"/>
+          <a href="tel:+57302123233434"><strong>Teléfono</strong><span>302123233434</span></a>
+          <a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span>
+          </div>
+          <form class="formulario">
+            <div class="col1">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required/>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+              <div class="sexo">
+                <label for="mujer">
+                  <input type="radio" id="mujer" name="sexo" value="mujer" checked>mujer
+                </label>
+                <label for="hombre">
+                  <input type="radio" id="hombre" name="sexo" value="hombre">hombre
+                </label>
+              </div>
+              <div class="intereses">
+                <label for="cotizacion">
+                  <input type="checkbox" id="cotizacion" name="interses" value="cotizacion" checked>Cotización
+                </label>
+                <label for="reclamos">
+                  <input type="checkbox" id="reclamos" name="interses" value="reclamos">Reclamos
+                </label>
+                <label for="comentarios">
+                  <input type="checkbox" id="comentarios" name="interses" value="comentarios">Comentarios
+                </label>
+                <label for="otros">
+                  <input type="checkbox" id="otros" name="interses" value="otros">Otros
+                </label>
+              </div>
+            </div>
+            <div class="col2">
+              <label for="textAreacomentarios">Comentarios</label>
+              <textarea id="textAreacomentarios" name="textAreacomentarios" rows="7" cols="30"></textarea>
+              <input type="submit" class="button" name="enviar" value="Enviar"/>
+            </div>
+          </form>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script>
+      console.log("Pixel Ratio: ", window.devicePixelRatio);
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+      var $burgerButton =document.getElementById('burger-button');
+      var $menu = document.getElementById('menu');
+      function toogleMenu() {
+        $menu.classList.toggle('active');
+        $burgerButton.classList.toggle('icon-close');
+      }
+
+      function mediaQuery() {
+        if(consulta.matches) {
+          console.log("SI se cumplio");
+          $burgerButton.style.display='inline-block';
+          $burgerButton.addEventListener('touchstart', toogleMenu);
+
+        } else {
+          $burgerButton.removeEventListener('touchstart', toogleMenu);
+          $burgerButton.style.display='none';
+          console.log("NO se cumplio");
+        }
+      }
+      mediaQuery();
+
+      var bLazy = new Blazy({
+        selector: 'img'
+      });
+    </script>
+  </body>
+</html>
